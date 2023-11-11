@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
 def divisible_by_2(num):
+    #A func implenetation.
     if num == 0:
         raise ZeroDivisionError
     for var in range(0, num):
