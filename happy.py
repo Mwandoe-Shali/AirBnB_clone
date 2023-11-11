@@ -6,6 +6,11 @@ def divisible_by_2(num):
     for var in range(0, num):
         res = (num % 2)
         if res == 0 :
-            return {f"{num} is divisible by 2."}
+            print (f"{num} is divisible by 2.")
+
         else:
-            return {f"{num} isn't divisible by 2."}
+            print (f"{num} isn't divisible by 2.")
+        num -= 1
+
+nambari = int(input("What number do you want to test: "))
+divisible_by_2(nambari)
