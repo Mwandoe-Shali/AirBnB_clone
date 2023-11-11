@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+#Checks if a number is divisible by 2
 
 def divisible_by_2(num):
     #A func implenetation.
