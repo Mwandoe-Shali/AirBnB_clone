@@ -25,8 +25,9 @@ class BaseModel():
         self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
-        cp_dct = dict(self.__dict__)
-        cp_dct["__class__"] = type(self).__name__
-        cp_dct["created_at"] = self.created_at.isoformat()
-        cp_dct["updated_at"] = self.updated_at.isoformat()
-        return cp_dct
+        # self.created_at.isoformat() == dict_cpy["created_at"].isoformat()
+        dict_cpy = dict(self.__dict__)
+        dict_cpy["__class__"] = type(self).__name__
+        dict_cpy["created_at"] = self.created_at.isoformat()
+        dict_cpy["updated_at"] = self.updated_at.isoformat()
+        return dict_cpy
