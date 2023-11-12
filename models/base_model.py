@@ -1,5 +1,8 @@
 #!/usr/bin/python3
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26efabfbcb04c2b11fde513e455e565fcee24b22
 '''
 BaseModel class definition module
 '''
