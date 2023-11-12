@@ -13,3 +13,9 @@ AirBnB_clone/
 │   │-- state.py
 │-- tests/
 │   │-- test_base_model.py
+│   │-- test_amenity.py
+│   │-- test_city.py
+│   │-- test_place.py
+│   │-- test_review.py
+│   │-- test_state.py
+│   │-- test_user.py
