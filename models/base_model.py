@@ -5,7 +5,7 @@ Contains the BaseModel class that defines all common attributes/methods
                         for other classes.
 """
 
-import uuid
+from uuid import uuid4
 from datetime import datetime
 from models import storage
 
