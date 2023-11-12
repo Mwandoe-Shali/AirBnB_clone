@@ -9,10 +9,19 @@ import uuid
 from datetime import datetime
 
 class BaseModel():
-    """BaseModel class to inherit from"""
-
+    """BaseModel class to inherit from.
+    Initializes public instance attributes:
+    - id: string - assign with an uuid when an instance is created
+    - created_at: datetime - assign with the current datetime when an instance is created
+    - updated_at: datetime - assign with the current datetime when an instance is created and
+                                                it will be updated every time you change your object
+    """
     def __init__(self, *args, **kwargs):
-        """Initialize a new BaseModel"""
+        """Initialize a new BaseModel.
+        Args:
+            args (any): Unused.
+            kwargs (dict): Key/value pairs of attributes.
+        """
         if kwargs:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
@@ -24,7 +33,9 @@ class BaseModel():
             self.updated_at = datetime.datetime.now()
         
     def __str__(self):
-        """Return string representation"""
+        """Return string representation.
+        Shows class name, id, and dictionary representation.
+        """
         # type(self).__name__ == self.__class__.__name__
         return "[{}] ({}) {}".format(type(self).__name__, self.id, self.__dict__)
     
@@ -33,7 +44,9 @@ class BaseModel():
         self.updated_at = datetime.datetime.now()
 
     def to_dict(self):
-        """Return dict representation of instance"""
+        """Return the dictionary representation of the BaseModel.
+        Includes ISO formatted datetime strings.
+        """
         # self.created_at.isoformat() == dict_cpy["created_at"].isoformat()
         dict_cpy = dict(self.__dict__)
         dict_cpy["__class__"] = type(self).__name__
