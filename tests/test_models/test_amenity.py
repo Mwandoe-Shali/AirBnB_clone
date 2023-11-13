@@ -21,7 +21,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
-        ''''Tests if new instances is stored in object'''
+        '''Tests if no args are provided'''
         self.assertIn(Amenity(), models.storage.all().values())
 
     def test_id_is_public_str(self):
@@ -185,7 +185,7 @@ class TestAmenity_to_dict(unittest.TestCase):
         self.assertEqual(str, type(am_dict["updated_at"]))
 
     def test_to_dict_output(self):
-        '''Checks for correct output of to_dict method'''
+        '''Checks for correct output of to_dict method.'''
         dt = datetime.today()
         am = Amenity()
         am.id = "123456"
