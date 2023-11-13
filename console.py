@@ -126,7 +126,7 @@ class HBNBCommand(cmd.Cmd):
         destroyArgs = args.split()
 
         # missing class name
-        if len(destoryArgs) == 0:
+        if len(destroyArgs) == 0:
             print('** class name missing **')
         # class name don't exist
         elif destroyArgs[0] not in self.classes:
