@@ -168,7 +168,7 @@ class HBNBCommand(cmd.Cmd):
                     # returns True if the str starts with class name
                     if obKey.startswith(cName):
                         ob = obStored.get(obKey)
-                        printAll.insert(0, obj.__str__())
+                        printAll.insert(0, ob.__str__())
                 print(printAll)
 
 
