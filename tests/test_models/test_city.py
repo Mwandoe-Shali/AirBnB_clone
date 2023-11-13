@@ -125,7 +125,6 @@ class TestCity_save(unittest.TestCase):
         except IOError:
             pass
 
-
     def test_one_save(self):
         '''Tests if save method works for 1 save'''
         cy = City()
