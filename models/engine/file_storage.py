@@ -11,6 +11,7 @@ from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage():
     """
     Class that serializes instances to a JSON file and
@@ -29,7 +30,7 @@ class FileStorage():
         if obj:
             key = "{}.{}".format(type(obj).__name__, obj.id)
             FileStorage.__objects[key] = obj
-    
+
     def save(self):
         '''serializes __objects to the JSON file (path: __file_path)'''
         with open(FileStorage.__file_path, encoding='utf-8', mode='w') as file:
@@ -38,13 +39,14 @@ class FileStorage():
 
     def reload(self):
         '''
-        deserializes the JSON file to __objects (only if the JSON file (__file_path) exists ;
-        otherwise, do nothing. If the file doesn’t exist, no exception should be raised)
+        deserializes the JSON file to __objects (only if the JSON
+        file (__file_path) exists ; otherwise, do nothing.
+        If the file doesn’t exist, no exception should be raised)
         '''
         try:
             with open(FileStorage.__file_path, 'r', encoding='utf-8') as file:
                 for key, value in (json.load(file)).items():
                     value = eval(value["__class__"])(**value)
-                    self.__objects[key] =  value
+                    self.__objects[key] = value
         except Exception:
             pass
