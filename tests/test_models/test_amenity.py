@@ -21,7 +21,7 @@ class TestAmenity_instantiation(unittest.TestCase):
         self.assertEqual(Amenity, type(Amenity()))
 
     def test_new_instance_stored_in_objects(self):
-        '''Tests if no args are provided'''
+        '''Tests if new instance is stored in obj'''
         self.assertIn(Amenity(), models.storage.all().values())
 
     def test_id_is_public_str(self):
@@ -145,7 +145,7 @@ class TestAmenity_save(unittest.TestCase):
             am.save(None)
 
     def test_save_updates_file(self):
-        '''Tests if save method works updates correctly'''
+        '''Tests if save method updates correctly'''
         am = Amenity()
         am.save()
         amid = "Amenity." + am.id
